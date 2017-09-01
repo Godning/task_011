@@ -19,7 +19,17 @@ function show_info() {
 }
 
 function check_not(str) {
+    let str_list = str.split(', ');
+    if(str_list.length != 6){
+        return true;
+    }
+    try{
+        let grade = build_grade(str, new Grade(0,0,0,0));
+    } catch (e){
+        return true;
+    }
     return false;
+
 
 }
 function build_grade(str_list, grade) {
